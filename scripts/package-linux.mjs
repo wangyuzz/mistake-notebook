@@ -2,11 +2,20 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const releaseDirectory = path.join(root, "releases");
-const releaseDate = new Date().toISOString().slice(0, 10).replaceAll("-", "");
-const archive = path.join(releaseDirectory, `shiti-linux-${releaseDate}.tar.gz`);
+const { version } = JSON.parse(
+  await fs.readFile(path.join(root, "package.json"), "utf8"),
+);
+if (!/^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/.test(version)) {
+  throw new Error("package.json must contain a valid release version");
+}
+const archive = path.join(
+  releaseDirectory,
+  `mistake-notebook-linux-v${version}.tar.gz`,
+);
 // Explicit source list keeps local accounts, credentials and backups out of releases.
 const sources = [
   "Dockerfile",
@@ -36,5 +45,11 @@ const result = spawnSync("tar", ["-czf", archive, ...sources], {
 if (result.error) throw result.error;
 if (result.status !== 0) process.exit(result.status || 1);
 const { size } = await fs.stat(archive);
+const checksum = createHash("sha256")
+  .update(await fs.readFile(archive))
+  .digest("hex");
+const checksumFile = path.join(releaseDirectory, "SHA256SUMS.txt");
+await fs.writeFile(checksumFile, `${checksum}  ${path.basename(archive)}\n`);
 console.log(`Linux deployment archive: ${archive}`);
 console.log(`Size: ${(size / 1024 / 1024).toFixed(2)} MB`);
+console.log(`SHA-256 checksums: ${checksumFile}`);

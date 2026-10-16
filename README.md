@@ -79,7 +79,7 @@ SETTINGS_ENCRYPTION_KEY 用于加密 AI 密钥，应保持固定并备份。留�
 
 ## 手机与容器
 
-Linux 首次部署见 [DEPLOY-LINUX.md](./DEPLOY-LINUX.md)。源码部署包可通过 `npm run package:linux` 生成到 releases，排除本地账号、错题和密钥。
+Linux 部署与更新见 [DEPLOY-LINUX.md](./DEPLOY-LINUX.md)，可从 [GitHub Releases](https://github.com/wangyuzz/mistake-notebook/releases) 下载部署包与 SHA-256 校验文件。源码部署包也可通过 `npm run package:linux` 生成到 releases，命名为 `mistake-notebook-linux-v版本号.tar.gz`，排除本地账号、错题和密钥。
 
 同一 Wi-Fi 手机访问时，将 HOST 改为 0.0.0.0 并重启，打开 http://电脑局域网IP:3001，防火墙放行该端口。拍照使用手机原生文件拍摄入口，浏览器支持取决于设备；也可从相册选择。公网使用 HTTPS 反向代理。
 

@@ -1,15 +1,17 @@
 # Linux 部署：Docker Compose + PostgreSQL
 
-这一版从空白数据库启动，不包含电脑上的账号、错题、AI 密钥或 `.env`。建议服务器至少 2 核、2GB 内存，安装 Docker Engine 和 Docker Compose v2。Docker 会构建前端，无需在服务器上另装 Node.js。
+首次部署从空白数据库启动；已有部署可以按第 4 节更新并保留原数据。发布包不包含真实账号、用户错题、AI 密钥或 `.env`。建议服务器至少 2 核、2GB 内存，安装 Docker Engine 和 Docker Compose v2。Docker 会构建前端，无需在服务器上另装 Node.js。
+
+从 [GitHub Releases](https://github.com/wangyuzz/mistake-notebook/releases) 下载 `mistake-notebook-linux-v1.0.0.tar.gz` 和 `SHA256SUMS.txt`，将两者放在同一目录后执行 `sha256sum -c SHA256SUMS.txt` 校验文件。后续版本请替换文件名中的版本号。
 
 ## 1. 上传与启动
 
-将 `shiti-linux-20261015.tar.gz` 上传到服务器，例如 `/opt/shiti/`，然后执行：
+将 `mistake-notebook-linux-v1.0.0.tar.gz` 上传到服务器，例如 `/opt/shiti/`，然后执行：
 
 ```sh
 mkdir -p /opt/shiti
 cd /opt/shiti
-tar -xzf shiti-linux-20261015.tar.gz
+tar -xzf mistake-notebook-linux-v1.0.0.tar.gz
 docker --version
 docker compose version
 sh deploy/init.sh
@@ -51,10 +53,11 @@ COOKIE_SECURE=true
 
 ## 4. 更新版本
 
-将新版本源码覆盖到同一目录，保留原 `.env`，然后运行：
+将新版本部署包上传到原安装目录，保留原 `.env`，然后运行（按实际版本替换文件名）：
 
 ```sh
 cd /opt/shiti
+tar -xzf mistake-notebook-linux-v1.0.0.tar.gz
 docker compose up -d --build
 docker compose ps
 docker compose logs --tail=100 app
