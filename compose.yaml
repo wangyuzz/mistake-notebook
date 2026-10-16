@@ -1,0 +1,46 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: shiti
+      POSTGRES_USER: shiti
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Please run sh deploy/init.sh first}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shiti -d shiti"]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+  app:
+    build: .
+    ports:
+      - "${APP_BIND_IP:-0.0.0.0}:${APP_PORT:-3001}:3001"
+    env_file: .env
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3001
+      DATABASE_URL: postgresql://shiti:${POSTGRES_PASSWORD:?Please run sh deploy/init.sh first}@db:5432/shiti
+      DATABASE_SSL: "false"
+    volumes:
+      - app_data:/app/data
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+    init: true
+    stop_grace_period: 30s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+volumes:
+  postgres_data:
+  app_data:

@@ -1,0 +1,548 @@
+/* Mobile reading scale: 16px body, 14px controls, 12px secondary text. */
+@media (max-width: 640px) {
+  :root {
+    font-size: 16px;
+    --muted: #667363;
+    --sage-ink: #47633c;
+    --peach-ink: #956036;
+    --blue-ink: #486b80;
+    --lavender-ink: #73618f;
+  }
+  body {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: #778272;
+    opacity: 1;
+  }
+  .topbar {
+    height: 60px;
+    padding: 0 16px;
+  }
+  .mobile-brand {
+    font-size: 23px;
+  }
+  .topbar-right {
+    gap: 12px;
+  }
+  .environment-pill {
+    font-size: 12px;
+    color: #736b45;
+    min-height: 34px;
+    padding: 6px 11px;
+  }
+  .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+  .main-content {
+    padding: 20px 16px 0;
+    margin-bottom: calc(94px + env(safe-area-inset-bottom));
+  }
+  .page-title-row {
+    position: relative;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 12px;
+  }
+  .page-title-row > div:first-child {
+    flex: 1;
+    min-width: 0;
+  }
+  .page-title-row .eyebrow,
+  .section-heading .eyebrow {
+    display: none;
+  }
+  .page-title-row h1 {
+    font-size: 28px;
+    line-height: 1.45;
+    margin: 0;
+    padding-right: 122px;
+    letter-spacing: 0;
+  }
+  .page-title-row p {
+    font-size: 14px;
+    color: #667363;
+    line-height: 1.8;
+    margin-top: 8px;
+    letter-spacing: 0;
+  }
+  .notebook-create-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .notebook-create-actions > .button {
+    min-height: 44px;
+    padding: 0 14px;
+    font-size: 14px;
+    gap: 7px;
+    border-radius: 11px;
+  }
+  .notebook-create-actions > .button svg {
+    width: 18px;
+    height: 18px;
+  }
+  .stats-grid {
+    gap: 10px;
+    margin: 0 0 24px;
+  }
+  .stat-card {
+    min-height: 94px;
+    padding: 14px 12px;
+    gap: 0;
+    border-radius: 12px;
+    justify-content: center;
+  }
+  .stat-card > .stat-icon,
+  .stat-card strong small {
+    display: none;
+  }
+  .stat-card > div {
+    min-width: 0;
+    width: 100%;
+  }
+  .stat-card > div > span {
+    padding: 0;
+    margin: 0 0 5px;
+    color: #667363;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .stat-card strong {
+    display: block;
+    font-size: 32px;
+    line-height: 1.2;
+    color: #284536;
+    overflow-wrap: anywhere;
+  }
+  .list-heading {
+    margin-bottom: 14px;
+    gap: 10px;
+  }
+  .list-heading h2 {
+    font-size: 19px;
+    letter-spacing: 0;
+  }
+  .list-heading h2 > span {
+    min-width: 26px;
+    height: 25px;
+    font-size: 13px;
+    color: #667363;
+  }
+  .view-toggle button {
+    width: 42px;
+    height: 40px;
+  }
+  .view-toggle svg {
+    width: 20px;
+    height: 20px;
+  }
+  .category-filters {
+    margin: 0 -16px 14px;
+    padding: 0 16px 4px;
+    gap: 7px;
+    scroll-padding: 16px;
+  }
+  .category-filters button {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 10px 14px;
+    min-height: 44px;
+    color: #667363;
+  }
+  .category-filters button.active {
+    color: #32513b;
+    font-weight: 500;
+    background: #e8efdf;
+  }
+  .filter-toolbar {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .search-box {
+    min-height: 48px;
+    padding: 0 13px;
+    border-radius: 11px;
+    color: #6c7a62;
+  }
+  .search-box input {
+    min-height: 46px;
+    font-size: 16px;
+  }
+  .search-box > svg {
+    width: 20px;
+    height: 20px;
+  }
+  .toolbar-options {
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .toolbar-options > select,
+  .sort-control > select {
+    font-size: 14px;
+    min-height: 42px;
+    color: #56664e;
+    padding: 6px 0;
+  }
+  .toolbar-options > select {
+    max-width: 46%;
+  }
+  .sort-control {
+    gap: 5px;
+  }
+  .sort-control > select {
+    max-width: 104px;
+  }
+  .filter-favorite {
+    min-height: 42px;
+    font-size: 14px;
+    padding: 0 9px;
+    gap: 5px;
+    color: #667363;
+  }
+  .filter-favorite > span {
+    display: inline;
+  }
+  .question-grid {
+    gap: 16px;
+  }
+  .card-preview {
+    height: 184px;
+  }
+  .paper-preview > p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+  .paper-heading,
+  .paper-heading > span:last-child {
+    font-size: 12px;
+  }
+  .card-main {
+    padding: 16px 16px 0;
+  }
+  .category-text,
+  .status-badge {
+    font-size: 13px;
+  }
+  .card-main h3 {
+    font-size: 18px;
+    line-height: 1.65;
+    margin: 12px 0;
+    color: #283d35;
+  }
+  .tags > span {
+    font-size: 12px;
+    padding: 5px 9px;
+    color: #5c6f52;
+  }
+  .status-badge.pending {
+    color: #956036;
+  }
+  .status-badge.reviewing {
+    color: #73618f;
+  }
+  .status-badge.mastered {
+    color: #47633c;
+  }
+  .card-footer {
+    font-size: 12px;
+    color: #667363;
+    margin-top: 14px;
+    padding: 14px 0;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .card-bookmark {
+    width: 42px;
+    height: 42px;
+  }
+  .card-number,
+  .photo-count {
+    font-size: 12px;
+  }
+  .card-preview > img {
+    filter: none;
+  }
+  .list-view .card-preview {
+    width: 90px;
+  }
+  .list-view .card-main h3 {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .list-view .category-text,
+  .list-view .status-badge,
+  .list-view .tags > span,
+  .list-view .card-footer {
+    font-size: 12px;
+  }
+  .list-view .card-category-row {
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .list-view .photo-count {
+    font-size: 11px;
+  }
+  .list-view .card-bookmark {
+    width: 38px;
+    height: 38px;
+  }
+  .add-card strong {
+    font-size: 16px;
+  }
+  .add-card small,
+  .add-card-link {
+    font-size: 14px;
+  }
+  .collection-footnote p,
+  .page-footer {
+    font-size: 12px;
+    color: #667363;
+    line-height: 1.8;
+    letter-spacing: 0;
+  }
+  .page-footer {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .mobile-nav {
+    height: calc(76px + env(safe-area-inset-bottom));
+    padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
+  }
+  .mobile-nav > button {
+    min-height: 54px;
+    min-width: 48px;
+    gap: 5px;
+    color: #6c7961;
+  }
+  .mobile-nav > button > span,
+  .mobile-nav > .mobile-add small {
+    font-size: 12px;
+  }
+  .mobile-nav > .mobile-add {
+    color: #50683f;
+  }
+  .mobile-nav > .mobile-add > span {
+    height: 38px;
+    width: 44px;
+  }
+  .section-heading h1,
+  .ai-main .section-heading h1 {
+    font-size: 28px;
+    line-height: 1.5;
+  }
+  .page-description,
+  .ai-main .page-description {
+    font-size: 14px;
+    color: #667363;
+    line-height: 1.8;
+    margin: 10px 0 20px;
+  }
+  .button,
+  .button-small,
+  .section-heading .button,
+  .modal-footer .button {
+    font-size: 14px;
+    min-height: 44px;
+  }
+  .text-button,
+  .muted,
+  .field,
+  .field-label {
+    font-size: 14px;
+  }
+  .muted {
+    color: #667363;
+  }
+  .pill,
+  .optional,
+  .detail-meta,
+  .detail-photo > span {
+    font-size: 12px;
+  }
+  .field,
+  .field-label {
+    color: #53664b;
+  }
+  .field input,
+  .field textarea,
+  .field select,
+  .notes-input,
+  .chat-composer textarea {
+    font-size: 16px;
+  }
+  .field input,
+  .field select {
+    min-height: 46px;
+  }
+  .modal-header h2,
+  .import-modal > .modal-header h2 {
+    font-size: 20px;
+    line-height: 1.55;
+  }
+  .modal-header p,
+  .import-modal > .modal-header p {
+    font-size: 13px;
+    color: #667363;
+    line-height: 1.75;
+  }
+  .modal-header .icon-button {
+    width: 42px;
+    height: 42px;
+  }
+  .prose,
+  .question-prose,
+  .message-content .prose,
+  .message-content .prose.markdown-content,
+  .markdown-content {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #344b37;
+  }
+  .content-label {
+    font-size: 16px;
+  }
+  .detail-meta {
+    color: #667363;
+    line-height: 1.8;
+    flex-wrap: wrap;
+  }
+  .answer-comparison > div > span {
+    font-size: 13px;
+  }
+  .status-select {
+    font-size: 14px;
+    min-height: 44px;
+    max-width: none;
+  }
+  .detail-footer {
+    flex-wrap: wrap;
+  }
+  .detail-footer > .icon-button {
+    width: 44px;
+    height: 44px;
+  }
+  .category-card h2 {
+    font-size: 18px;
+  }
+  .category-card p,
+  .category-card p > span,
+  .category-card > small {
+    font-size: 13px;
+    color: #667363;
+  }
+  .category-card p > span {
+    display: block;
+    margin: 3px 0 0;
+  }
+  .review-hero h2 {
+    font-size: 23px;
+  }
+  .review-hero p,
+  .review-start select {
+    font-size: 14px;
+  }
+  .review-list strong {
+    font-size: 16px;
+  }
+  .review-list > button > div > span,
+  .review-list .status-badge {
+    font-size: 12px;
+  }
+  .ai-context-bar strong,
+  .message-author,
+  .ai-connection,
+  .context-chip {
+    font-size: 13px;
+  }
+  .ai-context-bar select {
+    font-size: 16px;
+  }
+  .ai-welcome h2 {
+    font-size: 22px;
+  }
+  .ai-welcome p,
+  .prompt-grid button {
+    font-size: 14px;
+    color: #667363;
+  }
+  .prompt-grid button {
+    min-height: 48px;
+  }
+  .send-button {
+    width: 42px;
+    height: 42px;
+  }
+  .composer-footer > span,
+  .ai-disclaimer,
+  .ai-stream-status {
+    font-size: 12px;
+    color: #667363;
+  }
+  .settings-tabs > button {
+    font-size: 14px;
+    min-height: 44px;
+    padding: 10px 12px;
+    color: #667363;
+  }
+  .settings-heading h2,
+  .admin-ai-form .settings-heading h2 {
+    font-size: 18px;
+  }
+  .settings-heading p,
+  .admin-ai-form .settings-heading p,
+  .settings-copy,
+  .config-note p {
+    font-size: 14px;
+    color: #667363;
+    line-height: 1.8;
+  }
+  .auth-form-card > p,
+  .auth-form-card .field,
+  .auth-form-card .auth-submit {
+    font-size: 15px;
+  }
+  .auth-form-card > .auth-form-footnote {
+    font-size: 14px;
+    color: #667363;
+  }
+  .import-start-heading h2 {
+    font-size: 23px;
+  }
+  .import-start-heading p {
+    font-size: 14px;
+    color: #667363;
+  }
+  .import-upload-options strong {
+    font-size: 16px;
+  }
+  .import-upload-options span,
+  .import-privacy,
+  .segments-heading p,
+  .recognition-warning {
+    font-size: 12px;
+    color: #667363;
+    line-height: 1.8;
+  }
+  .segment-row-main strong,
+  .confirm-fields .field {
+    font-size: 14px;
+  }
+  .import-footer > .button {
+    font-size: 14px;
+    min-height: 44px;
+  }
+  .import-footer {
+    flex-wrap: wrap;
+  }
+  .toast,
+  .error-box {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}

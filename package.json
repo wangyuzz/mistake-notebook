@@ -1,0 +1,41 @@
+{
+  "name": "mistake-notebook",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "tsc -b && vite build --configLoader runner",
+    "start": "node server/index.mjs",
+    "package:linux": "node scripts/package-linux.mjs",
+    "icons:generate": "node scripts/generate-icons.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:e2e": "node tests/browser.mjs",
+    "migrate:demo": "node scripts/migrate-demo.mjs",
+    "samples:generate": "node scripts/generate-samples.mjs"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.15",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "katex": "^0.16.47",
+    "lucide-react": "^0.468.0",
+    "pg": "^8.16.3",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-markdown": "^10.1.0",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^4.7.0",
+    "pg-mem": "^3.0.5",
+    "playwright": "^1.56.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.3.6"
+  }
+}

@@ -1,0 +1,41 @@
+# Dependencies and build outputs
+node_modules/
+dist/
+.npm-cache/
+*.tsbuildinfo
+
+# Local credentials and private runtime data
+.env
+.env.*
+!.env.example
+data/
+backups/
+releases/
+*.key
+*.pem
+*.p12
+*.pfx
+*.sql
+*.dump
+*.sqlite
+*.sqlite3
+*.db
+*.bak
+*.backup
+
+# Logs, browser state, screenshots and temporary files
+*.log
+playwright-report/
+test-results/
+*-preview.png
+mobile-detail.png
+mobile-ai.png
+codex-clipboard-*
+storage-state*.json
+auth-state*.json
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

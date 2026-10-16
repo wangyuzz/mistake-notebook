@@ -1,0 +1,25 @@
+{
+  "id": "/",
+  "name": "拾题 · 错题本",
+  "short_name": "拾题",
+  "lang": "zh-CN",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#244e40",
+  "background_color": "#fffefa",
+  "icons": [
+    {
+      "src": "/icons/icon-192-v3.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512-v3.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
